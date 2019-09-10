@@ -3,6 +3,8 @@ const app = express()
 //Para funcionar no Zeit
 const path = require('path')
 
+const port = process.env.PORT || 3000
+
 const convert = require('./lib/convert')
 //Para o ejs
 app.set('view engine', 'ejs')
@@ -32,7 +34,7 @@ app.get('/cotacao', (req,res) => {
     }
 })
 
-app.listen(3000, err =>{
+app.listen(port, err =>{
     if(err){
         console.log('Não foi possível iniciar o servidor')
     }
